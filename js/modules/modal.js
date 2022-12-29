@@ -10,8 +10,8 @@ export default class Modal {
     this.eventToggleModal = this.eventToggleModal.bind(this);
     this.cliqueForaModal = this.cliqueForaModal.bind(this);
   }
- 
-  // abre ou fecha o modal 
+
+  // abre ou fecha o modal
   toggleModal() {
     this.containerModal.classList.toggle('ativo');
   }
@@ -25,7 +25,7 @@ export default class Modal {
   // fecha o modal ao clicar do lado de fora
   cliqueForaModal(event) {
     if (event.target === this.containerModal) {
-      this.toggleModal(event);
+      this.toggleModal();
     }
   }
 
@@ -33,7 +33,7 @@ export default class Modal {
   addModalEvents() {
     this.botaoAbrir.addEventListener('click', this.eventToggleModal);
     this.botaoFechar.addEventListener('click', this.eventToggleModal);
-    this.containerModal.addEventListener('click', this.CliqueForaModal);
+    this.containerModal.addEventListener('click', this.cliqueForaModal);
   }
 
   init() {
@@ -42,5 +42,4 @@ export default class Modal {
     }
     return this;
   }
-  
 }

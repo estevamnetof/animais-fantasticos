@@ -1,7 +1,7 @@
 export default class Funcionamento {
-  constructor(funcionamento, activeClass) {
-  this.funcionamento = document.querySelector(funcionamento);
-  this.activeClass = activeClass;
+  constructor(functionamento, activeClass) {
+    this.funcionamento = document.querySelector(functionamento);
+    this.activeClass = activeClass;
   }
 
   dadosFuncionamento() {
@@ -16,12 +16,12 @@ export default class Funcionamento {
   }
 
   estaAberto() {
-    this.semanaAberto = this.diasSemana.indexOf(this.diaAgora) !== -1;
-    this.horarioAberto = (this.horarioAgora >= this.horarioSemana[0] 
+    const semanaAberto = this.diasSemana.indexOf(this.diaAgora) !== -1;
+    const horarioAberto = (this.horarioAgora >= this.horarioSemana[0]
       && this.horarioAgora < this.horarioSemana[1]);
     return semanaAberto && horarioAberto;
   }
-    
+
   ativaAberto() {
     if (this.estaAberto()) {
       this.funcionamento.classList.add(this.activeClass);
